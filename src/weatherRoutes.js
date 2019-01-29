@@ -7,9 +7,14 @@ const darkSkyAPI = axios.create({
   baseURL: 'https://api.darksky.net',
 });
 
-router.get('/', (req, res) => darkSkyAPI
-  .get(`/forecast/${process.env.DARK_SKY_API_KEY}/49.2827,-123.1207`)
-  .then(response => res.send(response.data))
-  .catch(error => console.error(error)));
+router.post('/', async (req, res) => { 
+  try {
+  const forecast = await darkSkyAPI
+  .get(`/forecast/${process.env.DARK_SKY_API_KEY}/${req.body.lat},${req.body.lng}`)
+  res.send(forecast.data)
+  } catch (e) {
+    console.log(e)
+  }
+})
 
 module.exports = router;

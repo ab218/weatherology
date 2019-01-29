@@ -53,7 +53,7 @@ class WeatherCard extends React.Component {
   }
 
   componentDidMount() {
-    this.getWeatherData();
+    this.loadPosition();
   }
 
   getIcon = (iconData) => {
@@ -64,7 +64,7 @@ class WeatherCard extends React.Component {
       break;
 
     case 'clear-night':
-      weatherIcon = 'fas fa-moon-o';
+      weatherIcon = 'far fa-moon';
       break;
 
     case 'rain':
@@ -104,9 +104,29 @@ class WeatherCard extends React.Component {
     return weatherIcon;
   }
 
-  getWeatherData = async () => {
+  getCurrentPosition = (options = { timeout: 10000, maximumAge: 3600000 }) => new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  });
+
+  loadPosition = async () => {
     try {
-      const data = await axios.get('/api/weather');
+      const position = await this.getCurrentPosition();
+      this.getWeatherData({ lat: position.coords.latitude, lng: position.coords.longitude })
+    } catch (err) {
+      // if user does not allow location tracking, default to vancouver
+      if (err.code === 1) {
+        return this.getWeatherData({ lat: 49.2827, lng: -123.1207 })
+      }
+      console.log('failed to get position.', err);
+    }
+  }
+
+  getWeatherData = async (coords) => {
+    try {
+      const data = await axios.post('/api/weather', { 
+        lat: coords.lat, 
+        lng: coords.lng 
+      })
       this.setState({ weatherData: data.data });
     } catch (e) {
       console.log(e);
