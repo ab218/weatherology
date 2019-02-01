@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import axios from 'axios';
 import moment from 'moment';
+import SearchBar from './SearchBar'
 
 const styles = {
   container: {
@@ -138,6 +139,7 @@ class WeatherCard extends React.Component {
   renderToday = weatherData => (
     <div style={styles.container}>
       <div>
+        <SearchBar />
         <Card style={styles.card}>
           <CardActionArea>
             <h2 style={styles.dateTime}>{moment.unix(weatherData.currently.time).format('dddd, MMM Do, h:mm a')}</h2>

@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const weatherRoutes = require('./src/weatherRoutes.js');
+const darkSkyRoutes = require('./src/darkSkyRoutes.js');
+const googleRoutes = require('./src/googleRoutes.js');
 
-app.use('/api/weather', weatherRoutes);
+app.use('/api/weather', darkSkyRoutes);
+app.use('/api/google', googleRoutes);
 
 app.listen(process.env.PORT || 8080);
 console.log('server up on 8080');
