@@ -29,9 +29,7 @@ class OutlinedTextFields extends React.Component {
   getPlace = async (input) => {
       try {
           const place = await axios.post('api/google/info', { input })
-          console.log(place)
           const coords = await axios.post('api/google/coords', { placeid: place.data })
-          console.log(coords)
           this.props.getWeatherData({
               lat: coords.data.result.geometry.location.lat, 
               lng: coords.data.result.geometry.location.lng
@@ -54,12 +52,26 @@ class OutlinedTextFields extends React.Component {
             justifyContent: 'center', 
             marginBottom: '10em', 
             height: '50px', 
-            padding: '0' 
+            padding: '0', 
             }}>
         <Autocomplete
           autoHighlight
-          inputProps={{ id: 'states-autocomplete', style: { width: '100%', height: '100%', fontSize: '1.5em' } }}
-          wrapperStyle={{ position: 'relative', display: 'inline-block', width: '50%', height: '100%' }}
+          inputProps={{ 
+              id: 'states-autocomplete', 
+                style: { 
+                  opacity: '0.8',
+                  width: '100%', 
+                  height: '90%', 
+                  fontSize: '1.5em',
+                  margin: '0',
+                } 
+          }}
+          wrapperStyle={{ 
+              position: 'relative', 
+              display: 'inline-block', 
+              width: '50%', 
+              height: '100%' 
+            }}
           value={this.state.value}
           items={this.state.items}
           getItemValue={(item) => item.description}
@@ -84,13 +96,13 @@ class OutlinedTextFields extends React.Component {
         />
         <button
         onClick={() => this.getPlace(this.state.value)}
-        style={{margin: '0 1em', height: '100%'}}
+        style={{margin: '0 0 0 0.5em', height: '100%'}}
         >
         Submit
         </button>
         <button
         onClick={() => this.props.loadPosition()}
-        style={{margin: '0 1em', height: '100%'}}
+        style={{margin: '0', height: '100%', borderLeft: 'none'}}
         >
         Use Current Location
         </button>

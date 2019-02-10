@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
+import cloudy from './cloudy.jpeg'
 import Card from './Card'
 import SearchBar from './SearchBar'
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+text-align: center;
+background-image: url(${props => props.backgroundImage});  
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+`
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      backgroundImage: null,
       weatherData: [],
     };
   }
@@ -29,13 +39,28 @@ class App extends Component {
     }
   }
 
+  getImage = (image) => {
+      let backgroundImage = null;
+      switch (image) {
+      case 'cloudy':
+        backgroundImage = cloudy;
+        break;
+      case 'partly-cloudy-day':
+        backgroundImage = cloudy;
+        break;
+      default:
+        return backgroundImage;
+      }
+      return backgroundImage;
+  }
+
   getWeatherData = async (coords) => {
     try {
       const data = await axios.post('/api/weather', { 
         lat: coords.lat, 
         lng: coords.lng 
       })
-      this.setState({ weatherData: data.data });
+      this.setState({ backgroundImage: this.getImage(data.data.currently.icon), weatherData: data.data });
     } catch (e) {
       console.log(e);
     }
@@ -43,13 +68,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppContainer backgroundImage={this.state.backgroundImage}>
         <SearchBar 
         getWeatherData={this.getWeatherData}
         loadPosition={this.loadPosition}
         />
         <Card weatherData={this.state.weatherData}/>
-      </div>
+      </AppContainer>
     );
   }
 }
