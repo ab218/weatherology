@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Autocomplete from 'react-autocomplete'
+import './searchBar.css'
 
 class OutlinedTextFields extends React.Component {
   state = {
@@ -9,13 +10,6 @@ class OutlinedTextFields extends React.Component {
       search: 'Enter Location'
   };
 
-  menuStyle = {
-    borderRadius: '3px',
-    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-    padding: '2px 0',
-    fontSize: '90%',
-    overflow: 'auto',
-  }
 
   predictLocation = async (input) => {
     try {
@@ -70,7 +64,7 @@ class OutlinedTextFields extends React.Component {
               position: 'relative', 
               display: 'inline-block', 
               width: '50%', 
-              height: '100%' 
+              height: '100%'
             }}
           value={this.state.value}
           items={this.state.items}
@@ -85,7 +79,7 @@ class OutlinedTextFields extends React.Component {
             this.requestTimer = this.predictLocation(value)
           }}
           renderMenu={(items, value, style) => (
-          <div style={{ ...style, ...this.menuStyle }} children={items}/>
+          <div style={{ ...style }} children={items}/>
           )}
           renderItem={(item, isHighlighted) => (
             <div

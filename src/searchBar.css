@@ -1,0 +1,18 @@
+.item {
+    color: black;
+    background-color: white;
+}
+
+.item-highlighted {
+    color: white;
+    background-color: #4095bf;
+  }
+
+.menu {
+    border-radius: '3px';
+    box-shadow: '0 2px 12px rgba(0, 0, 0, 0.1)';
+    padding: '2px 0';
+    font-size: '90%';
+    overflow: 'auto';
+    background: 'white';
+  }

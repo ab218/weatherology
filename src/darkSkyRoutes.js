@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
   try {
   const forecast = await darkSkyAPI
   .get(`/forecast/${process.env.DARK_SKY_API_KEY}/${req.body.lat},${req.body.lng}`)
-  res.send(forecast.data)
+  res.json(forecast.data)
   } catch (e) {
     console.log(e)
   }
