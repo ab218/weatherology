@@ -143,7 +143,7 @@ class App extends Component {
         getWeatherData={this.getWeatherData}
         loadPosition={this.loadPosition}
         />
-        {this.state.currentWeather === 'clear' && this.renderSunny()}
+        {this.state.currentWeather === 'clear-day' && this.renderSunny()}
         {this.state.currentWeather === 'partly-cloudy-day' && this.renderPartlyCloudy()}
         {this.state.currentWeather === 'cloudy' && this.renderCloudy()}
         <Card weatherData={this.state.weatherData}/>
