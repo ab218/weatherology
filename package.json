@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "client": "react-scripts start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "yarn && yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
