@@ -5,6 +5,8 @@ import SearchBar from './SearchBar'
 import styled from 'styled-components';
 import './clouds.css'
 import './sun.css'
+import './snow.css';
+import './rain.css';
 
 const AppContainer = styled.div`
 min-height: 100%;
@@ -35,19 +37,10 @@ const RayBox = styled.div`
   right:0;
   bottom:0;	
   width:70px;  
-  -webkit-animation: ray_anim 45s linear infinite;
-  animation: ray_anim 45s linear infinite;
+  -webkit-animation: rayAnim 45s linear infinite;
+  animation: rayAnim 45s linear infinite;
   z-index: -1;
 `
-
-const docBody =  {
-  sunny: {
-    backgroundColor: 'black',
-  },
-  cloudy: {
-    backgroundColor: 'red',
-  }
-}
 
 class App extends Component {
   constructor(props) {
@@ -60,11 +53,12 @@ class App extends Component {
 
   componentDidUpdate() {
     if (this.state.currentWeather === 'clear-night') {
-      document.body.style.background = 'black';
+      return document.body.style.background = 'black';
     }
     if (this.state.currentWeather === 'cloudy') {
-      document.body.style.background = 'grey';
+      return document.body.style.background = 'grey';
     }
+    return document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed'
   }
 
   getCurrentPosition = (options = { timeout: 10000, maximumAge: 3600000 }) => new Promise((resolve, reject) => {
@@ -113,28 +107,60 @@ class App extends Component {
 
   renderPartlyCloudy = () => (
     <div>
-      <div className="cloud x1"></div>
-      <div className="cloud x2"></div>
-      <div className="cloud x3"></div>
-      <div className="cloud x4"></div>
-      <div className="cloud x5"></div>
+      <div className="cloud cloud1"></div>
+      <div className="cloud cloud2"></div>
+      <div className="cloud cloud3"></div>
+      <div className="cloud cloud4"></div>
+      <div className="cloud cloud5"></div>
   </div>
   )
 
   renderCloudy = () => (
   <div>
-    <div className="cloud x1"></div>
-    <div className="cloud x2"></div>
-    <div className="cloud x3"></div>
-    <div className="cloud x4"></div>
-    <div className="cloud x5"></div>
-    <div className="cloud x6"></div>
-    <div className="cloud x7"></div>
-    <div className="cloud x8"></div>
-    <div className="cloud x9"></div>
-    <div className="cloud x10"></div>
+    <div className="cloud cloud1"></div>
+    <div className="cloud cloud2"></div>
+    <div className="cloud cloud3"></div>
+    <div className="cloud cloud4"></div>
+    <div className="cloud cloud5"></div>
+    <div className="cloud cloud6"></div>
+    <div className="cloud cloud7"></div>
+    <div className="cloud cloud8"></div>
+    <div className="cloud cloud9"></div>
+    <div className="cloud cloud10"></div>
   </div>
   )
+
+  renderSnowy = () => (
+    <div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+      <div className="snowflake"></div>
+    </div>
+    )
+
+    renderRainy = () => (
+      <div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+        <div className="raindrop"></div>
+      </div>
+    )
 
   render() {
     return (
@@ -146,6 +172,8 @@ class App extends Component {
         {this.state.currentWeather === 'clear-day' && this.renderSunny()}
         {this.state.currentWeather === 'partly-cloudy-day' && this.renderPartlyCloudy()}
         {this.state.currentWeather === 'cloudy' && this.renderCloudy()}
+        {this.state.currentWeather === 'snowy' && this.renderSnowy()}
+        {this.state.currentWeather === 'rainy' && this.renderRainy()}
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );
