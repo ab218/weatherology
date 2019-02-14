@@ -12,6 +12,8 @@ import {
 } from './styles'
 import './app.css'
 
+// TODO: sleet, wind, fog
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,16 +24,18 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    // if (this.state.currentWeather === 'clear-night') {
-    //   return document.body.style.background = 'black';
-    // }
-    if (this.state.currentWeather === 'cloudy') {
-      return document.body.style.background = 'linear-gradient(to bottom, #1ad1ff 0%, #e6faff 100%) fixed';
+    switch (this.state.currentWeather) {
+      case 'clear-night':
+      case 'partly-cloudy-night':
+        return document.body.style.background = 'linear-gradient(to bottom, #191970 0%, #383838 100%) fixed';
+      case 'cloudy':
+        return document.body.style.background = 'linear-gradient(to bottom, #1ad1ff 0%, #e6faff 100%) fixed';
+      case 'rain':
+      case 'snow':
+        return document.body.style.background = 'linear-gradient(to bottom, #808080 0%, #f2f2f2 100%) fixed';
+      default:
+        return document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed'
     }
-    if (this.state.currentWeather === 'rainy' || this.state.currentWeather === 'snowy') {
-      return document.body.style.background = 'linear-gradient(to bottom, #808080 0%, #f2f2f2 100%) fixed';
-    }
-    return document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed'
   }
 
   getCurrentPosition = (options = { timeout: 10000, maximumAge: 3600000 }) => new Promise((resolve, reject) => {
@@ -72,9 +76,10 @@ class App extends Component {
         />
         {this.state.currentWeather === 'clear-day' && renderSunny()}
         {this.state.currentWeather === 'partly-cloudy-day' && renderPartlyCloudy()}
+        {this.state.currentWeather === 'partly-cloudy-night' && renderPartlyCloudy()}
         {this.state.currentWeather === 'cloudy' && renderCloudy()}
-        {this.state.currentWeather === 'snowy' && renderSnowy()}
-        {this.state.currentWeather === 'rainy' && renderRainy()}
+        {this.state.currentWeather === 'snow' && renderSnowy()}
+        {this.state.currentWeather === 'rain' && renderRainy()}
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );
