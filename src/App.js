@@ -2,45 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Card from './Card'
 import SearchBar from './SearchBar'
-import styled from 'styled-components';
-import './clouds.css'
-import './sun.css'
-import './snow.css';
-import './rain.css';
-
-const AppContainer = styled.div`
-min-height: 100%;
-text-align: center;
-`
-
-const Sun = styled.div`
-  position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin: 15vh auto;  
-  width:300px;
-  height:300px;
-  border-radius:50%;	
-  background:rgb(234, 238, 18);
-  opacity:0.9;			
-  box-shadow: 0px 0px 40px 15px rgb(234, 238, 18);  
-  z-index: -1;
-`
-
-const RayBox = styled.div`
-  position: absolute;
-  margin: auto;
-  top:0px;
-  left:0;
-  right:0;
-  bottom:0;	
-  width:70px;  
-  -webkit-animation: rayAnim 45s linear infinite;
-  animation: rayAnim 45s linear infinite;
-  z-index: -1;
-`
+import { 
+  AppContainer, 
+  renderCloudy,
+  renderPartlyCloudy,
+  renderRainy,
+  renderSnowy,
+  renderSunny
+} from './styles'
+import './app.css'
 
 class App extends Component {
   constructor(props) {
@@ -52,11 +22,14 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.currentWeather === 'clear-night') {
-      return document.body.style.background = 'black';
-    }
+    // if (this.state.currentWeather === 'clear-night') {
+    //   return document.body.style.background = 'black';
+    // }
     if (this.state.currentWeather === 'cloudy') {
-      return document.body.style.background = 'grey';
+      return document.body.style.background = 'linear-gradient(to bottom, #1ad1ff 0%, #e6faff 100%) fixed';
+    }
+    if (this.state.currentWeather === 'rainy' || this.state.currentWeather === 'snowy') {
+      return document.body.style.background = 'linear-gradient(to bottom, #808080 0%, #f2f2f2 100%) fixed';
     }
     return document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed'
   }
@@ -90,78 +63,6 @@ class App extends Component {
     }
   }
 
-  renderSunny = () => (
-  <Sun>
-    <RayBox>
-      <div className="ray ray1"></div>
-      <div className="ray ray2"></div>
-      <div className="ray ray3"></div>
-      <div className="ray ray4"></div>
-      <div className="ray ray5"></div>
-      <div className="ray ray6"></div>
-      <div className="ray ray7"></div>
-      <div className="ray ray8"></div>
-    </RayBox>
-  </Sun>
-  )
-
-  renderPartlyCloudy = () => (
-    <div>
-      <div className="cloud cloud1"></div>
-      <div className="cloud cloud2"></div>
-      <div className="cloud cloud3"></div>
-      <div className="cloud cloud4"></div>
-      <div className="cloud cloud5"></div>
-  </div>
-  )
-
-  renderCloudy = () => (
-  <div>
-    <div className="cloud cloud1"></div>
-    <div className="cloud cloud2"></div>
-    <div className="cloud cloud3"></div>
-    <div className="cloud cloud4"></div>
-    <div className="cloud cloud5"></div>
-    <div className="cloud cloud6"></div>
-    <div className="cloud cloud7"></div>
-    <div className="cloud cloud8"></div>
-    <div className="cloud cloud9"></div>
-    <div className="cloud cloud10"></div>
-  </div>
-  )
-
-  renderSnowy = () => (
-    <div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-      <div className="snowflake"></div>
-    </div>
-    )
-
-    renderRainy = () => (
-      <div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-        <div className="raindrop"></div>
-      </div>
-    )
-
   render() {
     return (
       <AppContainer>
@@ -169,11 +70,11 @@ class App extends Component {
         getWeatherData={this.getWeatherData}
         loadPosition={this.loadPosition}
         />
-        {this.state.currentWeather === 'clear-day' && this.renderSunny()}
-        {this.state.currentWeather === 'partly-cloudy-day' && this.renderPartlyCloudy()}
-        {this.state.currentWeather === 'cloudy' && this.renderCloudy()}
-        {this.state.currentWeather === 'snowy' && this.renderSnowy()}
-        {this.state.currentWeather === 'rainy' && this.renderRainy()}
+        {this.state.currentWeather === 'clear-day' && renderSunny()}
+        {this.state.currentWeather === 'partly-cloudy-day' && renderPartlyCloudy()}
+        {this.state.currentWeather === 'cloudy' && renderCloudy()}
+        {this.state.currentWeather === 'snowy' && renderSnowy()}
+        {this.state.currentWeather === 'rainy' && renderRainy()}
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );
