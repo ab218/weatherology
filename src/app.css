@@ -15,3 +15,13 @@
   #root {
     height: 100%;
   }
+
+  .item {
+    color: black;
+    background-color: white;
+}
+
+  .item-highlighted {
+    color: white;
+    background-color: #4095bf;
+  }

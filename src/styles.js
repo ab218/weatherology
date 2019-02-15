@@ -6,6 +6,19 @@ export const AppContainer = styled.div`
     text-align: center;
 `
 
+export const SearchBarContainer = styled.div`
+  display: flex; 
+  justify-content: center;
+  marginBottom: 10em; 
+  height: 50px;
+  padding: 0; 
+`
+
+export const SearchItem = styled.div`
+    color: ${props => props ? 'white' : 'black'};
+    background-color: ${props => props ? '#4095bf' : 'white'};
+`
+
 const moveClouds = keyframes`
 0% {
   margin-left: 1000px;
@@ -478,3 +491,71 @@ export const renderRainy = () => (
         <Raindrop />
     </div>
 )
+
+export const cardStyles = {
+    container: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'center',
+      paddingTop: '2em',
+    },
+    weekContainer: {
+      display: 'inline-block',
+      padding: '1em',
+      width: '10em',
+    },
+    card: {
+      maxWidth: 345,
+    },
+    weekCard: {
+      width: '10em',
+      height: '15em',
+    },
+    dateTime: {
+      padding: '0 1em',
+    },
+    media: {
+      height: 140,
+    },
+    icon: {
+      fontSize: 28,
+    },
+    highTemp: {
+      fontSize: 20,
+      color: 'red',
+    },
+    lowTemp: {
+      fontSize: 20,
+      color: 'blue',
+    },
+  };
+
+  export const searchBarStyles = {
+    submitButton: {
+        backgroundColor: 'white', 
+        borderRadius: '0', 
+        border: '1px solid lightgrey'
+    },
+    currentLocationButton: {
+        backgroundColor: 'white', 
+        borderRadius: '0', 
+        border: '1px solid lightgrey',
+        borderRight: 'none'
+    },
+    wrapperStyles: {
+        position: 'relative', 
+        display: 'inline-block', 
+        width: '50%', 
+        height: '100%',
+        zIndex: '2',
+    },
+    inputProps: {
+        opacity: '0.8',
+        width: '100%', 
+        height: '100%', 
+        fontSize: '1.5em',
+        margin: '0',
+        padding: '0',
+        border: 'none',
+    }
+  }

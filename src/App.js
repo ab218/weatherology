@@ -46,6 +46,7 @@ class App extends Component {
     try {
       const position = await this.getCurrentPosition();
       this.getWeatherData({ lat: position.coords.latitude, lng: position.coords.longitude })
+      this.getLocationName({ lat: position.coords.latitude, lng: position.coords.longitude })
     } catch (err) {
       // if user does not allow location tracking, default to vancouver
       if (err.code === 1 || err.code === 3) {
@@ -67,11 +68,40 @@ class App extends Component {
     }
   }
 
+  getLocationName = async (coords) => {
+    try {
+      const data = await axios.post('/api/google/location', {
+        lat: coords.lat,
+        lng: coords.lng
+      })
+      this.setState({ location: data.data })
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  getPlace = async (input) => {
+    try {
+        const place = await axios.post('api/google/info', { input })
+        const coords = await axios.post('api/google/coords', { placeid: place.data })
+        this.getWeatherData({
+            lat: coords.data.result.geometry.location.lat, 
+            lng: coords.data.result.geometry.location.lng
+        })
+        this.getLocationName({
+          lat: coords.data.result.geometry.location.lat, 
+          lng: coords.data.result.geometry.location.lng
+         })
+    } catch (e) {
+        console.log(e);
+    }
+}
+
   render() {
     return (
       <AppContainer>
         <SearchBar
-        getWeatherData={this.getWeatherData}
+        getPlace={this.getPlace}
         loadPosition={this.loadPosition}
         />
         {this.state.currentWeather === 'clear-day' && renderSunny()}
@@ -80,6 +110,9 @@ class App extends Component {
         {this.state.currentWeather === 'cloudy' && renderCloudy()}
         {this.state.currentWeather === 'snow' && renderSnowy()}
         {this.state.currentWeather === 'rain' && renderRainy()}
+        {this.state.location && 
+        <h3>{this.state.location}</h3>
+        }
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );

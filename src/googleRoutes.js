@@ -4,12 +4,12 @@ const axios = require('axios');
 const router = express.Router();
 
   const googleAPI = axios.create({
-    baseURL: 'https://maps.googleapis.com/maps/api/place',
+    baseURL: 'https://maps.googleapis.com/maps/api',
   });
   
   router.post('/info', async (req, res) => { 
       try {
-    const response = await googleAPI.get(`/findplacefromtext/json?inputtype=textquery&input=${req.body.input}&key=${process.env.GOOGLE_API_KEY}`)
+    const response = await googleAPI.get(`/place/findplacefromtext/json?inputtype=textquery&input=${req.body.input}&key=${process.env.GOOGLE_API_KEY}`)
     if (!response.data.candidates[0]) {
         return console.log('Please enter a valid location')
     }
@@ -21,17 +21,27 @@ const router = express.Router();
 
   router.post('/coords', async (req, res) => { 
       try {
-    const response = await googleAPI.get(`/details/json?placeid=${req.body.placeid}&key=${process.env.GOOGLE_API_KEY}`)
-    res.json(response.data)
+        const response = await googleAPI.get(`/place/details/json?placeid=${req.body.placeid}&key=${process.env.GOOGLE_API_KEY}`)
+        res.json(response.data)
       } catch (e) {
           console.log(e)
       }
   })
 
+  router.post('/location', async (req, res) => { 
+    try {
+      const response = await googleAPI.get(`/geocode/json?latlng=${req.body.lat},${req.body.lng}&result_type=locality&key=${process.env.GOOGLE_API_KEY}`)
+      console.log('location', response.data)
+      res.json(response.data.results[0].formatted_address)
+    } catch (e) {
+        console.log(e)
+    }
+})
+
   router.post('/', async (req, res) => { 
       try {
-    const response = await googleAPI.get(`/autocomplete/json?input=${req.body.input}&key=${process.env.GOOGLE_API_KEY}`)
-    res.json(response.data)
+        const response = await googleAPI.get(`/place/autocomplete/json?input=${req.body.input}&key=${process.env.GOOGLE_API_KEY}`)
+        res.json(response.data)
       } catch (e) {
           console.log(e)
       }
