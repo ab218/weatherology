@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Card from './Card'
 import SearchBar from './SearchBar'
 import { 
@@ -127,6 +128,7 @@ class App extends Component {
         >
         {this.state.location}</LocationName>
         }
+        {this.state.loading && <CircularProgress/>}
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );
