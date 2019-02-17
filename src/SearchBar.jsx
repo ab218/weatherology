@@ -29,7 +29,9 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-        <SearchBarContainer>
+        <SearchBarContainer
+        currentWeather={this.props.currentWeather}
+        >
           <Autocomplete
             autoHighlight
             inputProps={{ 
@@ -65,13 +67,13 @@ class SearchBar extends React.Component {
             style={searchBarStyles.submitButton}
             onClick={() => this.props.getPlace(this.state.value)}
             >
-            Submit
+            <i className="fas fa-search"></i>
           </Button>
           <Button
             style={searchBarStyles.currentLocationButton}
             onClick={() => this.props.loadPosition()}
             >
-            Use Current Location
+            <i className="fas fa-location-arrow"></i>
           </Button>
         </SearchBarContainer>
     );

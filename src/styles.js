@@ -13,10 +13,11 @@ color: ${props => props.icon === 'partly-cloudy-night' || props.icon === 'clear-
 
 export const SearchBarContainer = styled.div`
   display: flex; 
+  text-align: center;
   justify-content: center;
-  marginBottom: 10em; 
   height: 50px;
   padding: 0; 
+  margin-top: 1em;
 `
 
 export const SearchItem = styled.div`
@@ -425,6 +426,13 @@ const RayBox = styled.div`
     z-index: -1;
 `
 
+export const Title = styled.h1`
+font-size: 8vw;
+margin: 20vh 0;
+color: white;
+font-family: 'Palanquin Dark', cursive;
+`
+
 export const renderSunny = () => (
     <Sun>
       <RayBox>
@@ -544,7 +552,9 @@ export const cardStyles = {
         backgroundColor: 'white', 
         borderRadius: '0', 
         border: '1px solid lightgrey',
-        borderRight: 'none'
+        borderRight: 'none',
+        borderTopRightRadius: '25px',
+        borderBottomRightRadius: '25px',
     },
     wrapperStyles: {
         position: 'relative', 
@@ -552,14 +562,17 @@ export const cardStyles = {
         width: '50%', 
         height: '100%',
         zIndex: '2',
+
     },
     inputProps: {
         opacity: '0.8',
-        width: '100%', 
+        width: '95%', 
         height: '100%', 
         fontSize: '1.5em',
         margin: '0',
-        padding: '0',
+        padding: '0 0 0 5%',
         border: 'none',
+        borderTopLeftRadius: '25px',
+        borderBottomLeftRadius: '25px',
     }
   }

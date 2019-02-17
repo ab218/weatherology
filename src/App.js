@@ -9,7 +9,8 @@ import {
   renderPartlyCloudy,
   renderRainy,
   renderSnowy,
-  renderSunny
+  renderSunny,
+  Title
 } from './styles'
 import './app.css'
 
@@ -101,16 +102,22 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
-        <SearchBar
-        getPlace={this.getPlace}
-        loadPosition={this.loadPosition}
-        />
+        {!this.state.currentWeather 
+        ? <div>
+          {renderPartlyCloudy()}
+          <Title>Weatherology</Title>
+        </div> 
+        : null}
         {this.state.currentWeather === 'clear-day' && renderSunny()}
         {this.state.currentWeather === 'partly-cloudy-day' && renderPartlyCloudy()}
         {this.state.currentWeather === 'partly-cloudy-night' && renderPartlyCloudy()}
         {this.state.currentWeather === 'cloudy' && renderCloudy()}
         {this.state.currentWeather === 'snow' && renderSnowy()}
         {this.state.currentWeather === 'rain' && renderRainy()}
+        <SearchBar
+        getPlace={this.getPlace}
+        loadPosition={this.loadPosition}
+        />
         {this.state.location && 
         <LocationName
         icon={this.state.currentWeather}
