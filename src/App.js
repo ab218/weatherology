@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Card from './Card'
 import SearchBar from './SearchBar'
 import { 
@@ -22,6 +23,7 @@ class App extends Component {
     this.state = {
       currentWeather: null,
       weatherData: [],
+      loading: false,
     };
   }
 
@@ -46,9 +48,11 @@ class App extends Component {
 
   loadPosition = async () => {
     try {
+      this.setState({loading: true})
       const position = await this.getCurrentPosition();
       this.getWeatherData({ lat: position.coords.latitude, lng: position.coords.longitude })
       this.getLocationName({ lat: position.coords.latitude, lng: position.coords.longitude })
+      this.setState({loading: false})
     } catch (err) {
       // if user does not allow location tracking, default to vancouver
       if (err.code === 1 || err.code === 3) {
@@ -114,6 +118,7 @@ class App extends Component {
         {this.state.currentWeather === 'cloudy' && renderCloudy()}
         {this.state.currentWeather === 'snow' && renderSnowy()}
         {this.state.currentWeather === 'rain' && renderRainy()}
+        {this.state.loading && <CircularProgress/>}
         <SearchBar
         getPlace={this.getPlace}
         loadPosition={this.loadPosition}
