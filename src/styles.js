@@ -501,7 +501,7 @@ export const cardStyles = {
       display: 'flex',
       width: '100%',
       justifyContent: 'center',
-      paddingTop: '2em',
+      padding: '2em 0',
     },
     weekContainer: {
       display: 'inline-block',
