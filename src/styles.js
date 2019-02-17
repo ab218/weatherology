@@ -506,13 +506,13 @@ export const cardStyles = {
     weekContainer: {
       display: 'inline-block',
       padding: '1em',
-      width: '10em',
+      width: '8em',
     },
     card: {
       maxWidth: 345,
     },
     weekCard: {
-      width: '10em',
+      width: '8em',
       height: '15em',
     },
     dateTime: {
