@@ -118,7 +118,6 @@ class App extends Component {
         {this.state.currentWeather === 'cloudy' && renderCloudy()}
         {this.state.currentWeather === 'snow' && renderSnowy()}
         {this.state.currentWeather === 'rain' && renderRainy()}
-        {this.state.loading && <CircularProgress/>}
         <SearchBar
         getPlace={this.getPlace}
         loadPosition={this.loadPosition}
@@ -129,6 +128,7 @@ class App extends Component {
         >
         {this.state.location}</LocationName>
         }
+        {this.state.loading && <CircularProgress/>}
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>
     );
