@@ -55,7 +55,8 @@ class App extends Component {
     } catch (err) {
       // if user does not allow location tracking, default to vancouver
       if (err.code === 1 || err.code === 3) {
-        return this.getWeatherData({ lat: 49.2827, lng: -123.1207 })
+        this.getWeatherData({ lat: 49.2827, lng: -123.1207 })
+        this.getLocationName({ lat: 49.2827, lng: -123.1207 })
       }
       console.log('failed to get position.', err);
     }

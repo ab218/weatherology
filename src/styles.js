@@ -256,18 +256,10 @@ position: absolute;
 opacity:0.8;
 z-index: -1;
 
-&:nth-of-type(0) {    
-  height:500px;
-  width:50px;
-  -webkit-transform: rotate(0deg);
-  top: 300px;
-  left: 0px;
-}
-
 &:nth-of-type(1) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 200px;
   left: -300px;
 }
@@ -275,7 +267,7 @@ z-index: -1;
 &:nth-of-type(2) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
   top: -100px;
   left: -400px;
 }
@@ -283,7 +275,7 @@ z-index: -1;
 &:nth-of-type(3) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
   top:-375px;
   left: -300px;
 }
@@ -291,7 +283,7 @@ z-index: -1;
 &:nth-of-type(4) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
   top:-500px;
   left: 0;
 }
@@ -299,7 +291,7 @@ z-index: -1;
 &:nth-of-type(5) {
   height:500px;
   width: 50px;
-  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   top:200px;
   left: 300px;
 }
@@ -307,7 +299,7 @@ z-index: -1;
 &:nth-of-type(6) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   top:-100px;
   left: 400px;
 }
@@ -315,10 +307,30 @@ z-index: -1;
 &:nth-of-type(7) {
   height:500px;
   width:50px;
-  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
   top: -400px;
   left: 300px;
 }
+
+&:nth-of-type(8) {    
+    height:500px;
+    width:50px;
+    transform: rotate(0deg);
+    top: 300px;
+    left: 0px;
+  }
+`
+
+const RayBox = styled.div`
+    position: absolute;
+    margin: auto;
+    top:0px;
+    left:0;
+    right:0;
+    bottom:0;	
+    width:70px;  
+    animation: rayAnim 45s linear infinite;
+    z-index: -1;
 `
 
 const Snowflake = styled.div`
@@ -411,19 +423,6 @@ const Sun = styled.div`
     z-index: -1;
     animation: ${rayAnim} 20s linear infinite;
 
-`
-
-const RayBox = styled.div`
-    position: absolute;
-    margin: auto;
-    top:0px;
-    left:0;
-    right:0;
-    bottom:0;	
-    width:70px;  
-    -webkit-animation: rayAnim 45s linear infinite;
-    animation: rayAnim 45s linear infinite;
-    z-index: -1;
 `
 
 export const Title = styled.h1`
