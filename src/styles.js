@@ -249,7 +249,8 @@ animation:${rainFall} 1s linear infinite;
 `
 
 const Ray = styled.div`
-background: -webkit-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+height:500px;
+width:50px;
 background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
 border-radius:80% 80% 0 0;
 position: absolute;
@@ -257,64 +258,48 @@ opacity:0.8;
 z-index: -1;
 
 &:nth-of-type(1) {
-  height:500px;
-  width:50px;
   transform: rotate(45deg);
   top: 200px;
   left: -300px;
 }
 
 &:nth-of-type(2) {
-  height:500px;
-  width:50px;
   transform: rotate(90deg);
   top: -100px;
   left: -400px;
 }
 
 &:nth-of-type(3) {
-  height:500px;
-  width:50px;
   transform: rotate(135deg);
   top:-375px;
   left: -300px;
 }
 
 &:nth-of-type(4) {
-  height:500px;
-  width:50px;
   transform: rotate(180deg);
   top:-500px;
   left: 0;
 }
 
 &:nth-of-type(5) {
-  height:500px;
-  width: 50px;
   transform: rotate(-45deg);
   top:200px;
   left: 300px;
 }
 
 &:nth-of-type(6) {
-  height:500px;
-  width:50px;
   transform: rotate(-90deg);
   top:-100px;
   left: 400px;
 }
 
 &:nth-of-type(7) {
-  height:500px;
-  width:50px;
   transform: rotate(-135deg);
   top: -400px;
   left: 300px;
 }
 
 &:nth-of-type(8) {    
-    height:500px;
-    width:50px;
     transform: rotate(0deg);
     top: 300px;
     left: 0px;
@@ -408,14 +393,14 @@ animation: ${snowflakesFall} 3s linear infinite, ${snowflakesShake} 2s ease-in-o
 `
 
 const Sun = styled.div`
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     right:0;
     bottom:0;
     margin: 15vh auto;  
-    width:300px;
-    height:300px;
+    height: 300px;
+    width: 300px;
     border-radius:50%;	
     background:rgb(234, 238, 18);
     opacity:0.9;			
