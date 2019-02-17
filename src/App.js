@@ -4,6 +4,7 @@ import Card from './Card'
 import SearchBar from './SearchBar'
 import { 
   AppContainer, 
+  LocationName,
   renderCloudy,
   renderPartlyCloudy,
   renderRainy,
@@ -111,7 +112,10 @@ class App extends Component {
         {this.state.currentWeather === 'snow' && renderSnowy()}
         {this.state.currentWeather === 'rain' && renderRainy()}
         {this.state.location && 
-        <h3>{this.state.location}</h3>
+        <LocationName
+        icon={this.state.currentWeather}
+        >
+        {this.state.location}</LocationName>
         }
         <Card weatherData={this.state.weatherData}/>
       </AppContainer>

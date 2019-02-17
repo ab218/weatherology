@@ -32,7 +32,10 @@ const router = express.Router();
     try {
       const response = await googleAPI.get(`/geocode/json?latlng=${req.body.lat},${req.body.lng}&result_type=locality&key=${process.env.GOOGLE_API_KEY}`)
       console.log('location', response.data)
-      res.json(response.data.results[0].formatted_address)
+      if (response.data.results.length) {
+        return res.json(response.data.results[0].formatted_address)
+      }
+      return res.json(response.data.plus_code.compound_code)
     } catch (e) {
         console.log(e)
     }

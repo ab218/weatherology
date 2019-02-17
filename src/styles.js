@@ -4,6 +4,11 @@ import styled, { keyframes } from 'styled-components';
 export const AppContainer = styled.div`
     min-height: 100%;
     text-align: center;
+    overflow: hidden;
+`
+
+export const LocationName = styled.h3`
+color: ${props => props.icon === 'partly-cloudy-night' || props.icon === 'clear-night' ? 'white' : 'black'}
 `
 
 export const SearchBarContainer = styled.div`
@@ -245,7 +250,6 @@ animation:${rainFall} 1s linear infinite;
 const Ray = styled.div`
 background: -webkit-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
 background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
-margin-left:10px;
 border-radius:80% 80% 0 0;
 position: absolute;
 opacity:0.8;

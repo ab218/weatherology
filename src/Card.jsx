@@ -81,7 +81,6 @@ class WeatherCard extends React.Component {
 
   renderWeek = weatherData => 
   {
-    console.log(weatherData)
     return weatherData.daily.data.map(
     day => (
       <div key={day.sunsetTime} style={cardStyles.weekContainer}>
