@@ -1,0 +1,19 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "no-shadow": "off",
+      "camelcase": [0],
+      "react/prefer-stateless-function": [0, {
+          "ignorePureComponents": true
+        }],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "indent": ["error", 2],
+      "react/prop-types": 0,
+      "import/no-named-as-default": 0
+    }
+}

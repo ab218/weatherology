@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import moment from 'moment';
-import { cardStyles } from './styles'
+import { cardStyles } from './styles';
 
 class WeatherCard extends React.Component {
   getIcon = (iconData) => {
@@ -79,9 +79,7 @@ class WeatherCard extends React.Component {
     </div>
   )
 
-  renderWeek = weatherData => 
-  {
-    return weatherData.daily.data.map(
+  renderWeek = weatherData => weatherData.daily.data.map(
     day => (
       <div key={day.sunsetTime} style={cardStyles.weekContainer}>
         <Card style={cardStyles.weekCard}>
@@ -107,7 +105,6 @@ class WeatherCard extends React.Component {
       </div>
     ),
   )
-    }
 
   render() {
     const { weatherData } = this.props;
