@@ -577,7 +577,6 @@ export const searchBarStyles = {
     width: '50%',
     height: '100%',
     zIndex: '2',
-
   },
   inputProps: {
     opacity: '0.8',
