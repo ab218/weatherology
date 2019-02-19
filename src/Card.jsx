@@ -10,9 +10,9 @@ import cloudyNight from './weatherIcons/cloudy-night-1.svg';
 import day from './weatherIcons/day.svg';
 import fog from './weatherIcons/fog.svg';
 import night from './weatherIcons/night.svg';
-import rainy from './weatherIcons/rainy-1.svg';
+import rainy from './weatherIcons/rainy-5.svg';
 import sleet from './weatherIcons/rainy-7.svg';
-import snowy from './weatherIcons/snowy-1.svg';
+import snowy from './weatherIcons/snowy-5.svg';
 import wind from './weatherIcons/wind.svg';
 
 class WeatherCard extends React.Component {
@@ -109,11 +109,11 @@ class WeatherCard extends React.Component {
             <h2 style={cardStyles.lowTemp}>
               {`${this.toCelcius(day.temperatureLow)}ºC`}
             </h2>
-            <CardContent>
+            {/* <CardContent>
               <h4>
                 {day.summary}
               </h4>
-            </CardContent>
+            </CardContent> */}
           </CardActionArea>
         </Card>
       </div>
