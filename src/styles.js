@@ -17,7 +17,7 @@ export const SearchBarContainer = styled.div`
   display: flex; 
   text-align: center;
   justify-content: center;
-  height: 50px;
+  height: 2em;
   padding: 0; 
   margin-top: 1em;
 `;
