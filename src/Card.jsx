@@ -103,17 +103,19 @@ class WeatherCard extends React.Component {
               alt={weatherData.currently.icon}
               src={this.getIcon(day.icon)}
             />
-            <h2 style={cardStyles.highTemp}>
-              {`${this.toCelcius(day.temperatureHigh)}ºC`}
-            </h2>
-            <h2 style={cardStyles.lowTemp}>
-              {`${this.toCelcius(day.temperatureLow)}ºC`}
-            </h2>
-            {/* <CardContent>
-              <h4>
+            <div style={cardStyles.temps}>
+              <h2 style={cardStyles.highTemp}>
+                {`${this.toCelcius(day.temperatureHigh)}º`}
+              </h2>
+              <h2 style={cardStyles.lowTemp}>
+                {`${this.toCelcius(day.temperatureLow)}º`}
+              </h2>
+            </div>
+            <div style={cardStyles.summary}>
+              <h4 style={cardStyles.summaryh4}>
                 {day.summary}
               </h4>
-            </CardContent> */}
+            </div>
           </CardActionArea>
         </Card>
       </div>

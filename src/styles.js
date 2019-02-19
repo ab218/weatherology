@@ -525,13 +525,24 @@ export const cardStyles = {
   currentlyFont: {
     fontSize: 28,
   },
+  temps: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   highTemp: {
     fontSize: 20,
-    color: 'red',
+    paddingRight: '1em',
+    color: '#878787',
   },
   lowTemp: {
     fontSize: 20,
-    color: 'blue',
+    color: '#bababa',
+  },
+  summary: {
+    margin: '0 1em',
+  },
+  summaryh4: {
+    margin: '0',
   },
 };
 
