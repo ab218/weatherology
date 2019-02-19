@@ -507,7 +507,7 @@ export const cardStyles = {
   },
   weekCard: {
     width: '8em',
-    height: '18em',
+    height: '19em',
   },
   dateTime: {
     padding: '0 1em',
