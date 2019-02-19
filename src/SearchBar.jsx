@@ -21,17 +21,18 @@ class SearchBar extends React.Component {
     }
   }
 
-  handleChange = name => (event) => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
+  // handleChange = name => (event) => {
+  //   this.setState({
+  //     [name]: event.target.value,
+  //   });
+  // };
 
   render() {
     const {
       currentWeather, getPlace, loadPosition,
     } = this.props;
     const { value, items } = this.state;
+    console.log(items);
     return (
       <SearchBarContainer
         currentWeather={currentWeather}
@@ -62,7 +63,7 @@ class SearchBar extends React.Component {
           )}
           renderItem={(item, isHighlighted) => (
             <div
-              className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
+              className={`item ${isHighlighted ? 'item-highlighted' : ''} ${item.id === items[items.length - 1].id ? 'lastItem' : ''} ${item.id === items[0].id ? 'firstItem' : ''}`}
               key={item.description}
             >
               {item.description}

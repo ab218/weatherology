@@ -8,7 +8,9 @@ export const AppContainer = styled.div`
 `;
 
 export const LocationName = styled.h3`
-  color: ${props => (props.icon === 'partly-cloudy-night' || props.icon === 'clear-night' ? 'white' : 'black')}
+  color: white;
+  font-family: 'Palanquin', 'sans-serif';
+  font-size: 2em;
 `;
 
 export const SearchBarContainer = styled.div`
@@ -105,7 +107,7 @@ const Cloud = styled.div`
   &:nth-of-type(1) {
     left: 200px;
     transform: scale(0.6);
-    opacity: 0.6;
+    opacity: 0.3;
     animation: ${moveClouds} 25s linear infinite;
   }
 
@@ -113,7 +115,7 @@ const Cloud = styled.div`
     left: -250px; 
     top: 200px;
     transform: scale(0.8);
-    opacity: 0.8;
+    opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
 
@@ -121,7 +123,7 @@ const Cloud = styled.div`
     left: 470px; 
     top: 250px;
     transform: scale(0.75);
-    opacity: 0.75;
+    opacity: 0.4;
     animation: ${moveClouds} 18s linear infinite;
   }
 
@@ -129,7 +131,7 @@ const Cloud = styled.div`
     left: -150px; 
     top: 150px;
     transform: scale(0.8);
-    opacity: 0.8;
+    opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
 
@@ -137,7 +139,7 @@ const Cloud = styled.div`
     left: 150px; 
     top: 10vh;
     transform: scale(1.5);
-    opacity: 0.8;
+    opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
   }
 
@@ -145,7 +147,7 @@ const Cloud = styled.div`
     left: -50px;
     top: 15vh;
     transform: scale(2.5);
-    opacity: 0.8;
+    opacity: 0.4;
     animation: ${moveClouds} 25s linear infinite;
   }
 
@@ -153,7 +155,7 @@ const Cloud = styled.div`
     left: -100px; 
     top: 5vh;
     transform: scale(3);
-    opacity: 0.8;
+    opacity: 0.3;
     animation: ${moveClouds} 20s linear infinite;
   }
 
@@ -161,7 +163,7 @@ const Cloud = styled.div`
     left: -100px; 
     top: 8vh;
     transform: scale(2);
-    opacity: 0.8;
+    opacity: 0.2;
     animation: ${moveClouds} 10s linear infinite;
   }
 
@@ -169,7 +171,7 @@ const Cloud = styled.div`
     left: 100px; 
     top: 12vh;
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
   }
 `;
@@ -492,7 +494,7 @@ export const cardStyles = {
     display: 'flex',
     width: '100%',
     justifyContent: 'center',
-    padding: '2em 0',
+    padding: '1.5em 0',
   },
   weekContainer: {
     display: 'inline-block',
@@ -504,15 +506,23 @@ export const cardStyles = {
   },
   weekCard: {
     width: '8em',
-    height: '15em',
+    height: '16em',
   },
   dateTime: {
     padding: '0 1em',
   },
+  icon: {
+    height: 'auto',
+    width: '5em',
+  },
+  currentlyIcon: {
+    height: 'auto',
+    width: '8em',
+  },
   media: {
     height: 140,
   },
-  icon: {
+  currentlyFont: {
     fontSize: 28,
   },
   highTemp: {

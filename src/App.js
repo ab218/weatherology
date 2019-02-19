@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Card from './Card';
 import SearchBar from './SearchBar';
+import nightImg from './stars.jpeg';
+// import cloudsImg from './clouds.jpeg';
 import {
   AppContainer,
   LocationName,
@@ -30,7 +32,7 @@ class App extends Component {
     switch (currentWeather) {
     case 'clear-night':
     case 'partly-cloudy-night':
-      document.body.style.background = 'linear-gradient(to bottom, #191970 0%, #383838 100%) fixed';
+      document.body.style.backgroundImage = `url(${nightImg})`;
       break;
     case 'cloudy':
       document.body.style.background = 'linear-gradient(to bottom, #1ad1ff 0%, #e6faff 100%) fixed';

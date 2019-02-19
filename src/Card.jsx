@@ -4,49 +4,59 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import moment from 'moment';
 import { cardStyles } from './styles';
+import cloudy from './weatherIcons/cloudy.svg';
+import cloudyDay from './weatherIcons/cloudy-day-1.svg';
+import cloudyNight from './weatherIcons/cloudy-night-1.svg';
+import day from './weatherIcons/day.svg';
+import fog from './weatherIcons/fog.svg';
+import night from './weatherIcons/night.svg';
+import rainy from './weatherIcons/rainy-1.svg';
+import sleet from './weatherIcons/rainy-7.svg';
+import snowy from './weatherIcons/snowy-1.svg';
+import wind from './weatherIcons/wind.svg';
 
 class WeatherCard extends React.Component {
   getIcon = (iconData) => {
     let weatherIcon = null;
     switch (iconData) {
     case 'clear-day':
-      weatherIcon = 'fas fa-sun';
+      weatherIcon = day;
       break;
 
     case 'clear-night':
-      weatherIcon = 'far fa-moon';
+      weatherIcon = night;
       break;
 
     case 'rain':
-      weatherIcon = 'fas fa-umbrella';
+      weatherIcon = rainy;
       break;
 
     case 'snow':
-      weatherIcon = 'fas fa-snowflake';
+      weatherIcon = snowy;
       break;
 
     case 'sleet':
-      weatherIcon = 'fab fa-empire';
+      weatherIcon = sleet;
       break;
 
     case 'wind':
-      weatherIcon = 'fab fa-pagelines';
+      weatherIcon = wind;
       break;
 
     case 'fog':
-      weatherIcon = 'fas fa-blind';
+      weatherIcon = fog;
       break;
 
     case 'cloudy':
-      weatherIcon = 'fas fa-cloud';
+      weatherIcon = cloudy;
       break;
 
     case 'partly-cloudy-day':
-      weatherIcon = 'fab fa-skyatlas';
+      weatherIcon = cloudyDay;
       break;
 
     case 'partly-cloudy-night':
-      weatherIcon = 'fab fa-soundcloud';
+      weatherIcon = cloudyNight;
       break;
     default:
       return weatherIcon;
@@ -62,12 +72,14 @@ class WeatherCard extends React.Component {
         <Card style={cardStyles.card}>
           <CardActionArea>
             <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('dddd, MMM Do, h:mm a')}</h2>
-            <h1 style={cardStyles.icon}>
+            <h1 style={cardStyles.currentlyFont}>
               {`${this.toCelcius(weatherData.currently.temperature)}ºC`}
             </h1>
-            <h1 style={cardStyles.icon}>
-              <i className={this.getIcon(weatherData.currently.icon)} />
-            </h1>
+            <img
+              style={cardStyles.currentlyIcon}
+              alt={weatherData.currently.icon}
+              src={this.getIcon(weatherData.currently.icon)}
+            />
             <CardContent>
               <h2>
                 {weatherData.currently.summary}
@@ -86,9 +98,11 @@ class WeatherCard extends React.Component {
           <CardActionArea>
             <h3>{moment.unix(day.time).format('dddd')}</h3>
             <h2>{moment.unix(day.time).format('MMM Do')}</h2>
-            <h1 style={cardStyles.icon}>
-              <i className={this.getIcon(day.icon)} />
-            </h1>
+            <img
+              style={cardStyles.icon}
+              alt={weatherData.currently.icon}
+              src={this.getIcon(day.icon)}
+            />
             <h2 style={cardStyles.highTemp}>
               {`${this.toCelcius(day.temperatureHigh)}ºC`}
             </h2>
