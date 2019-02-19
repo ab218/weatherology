@@ -513,8 +513,8 @@ export const cardStyles = {
     padding: '0 1em',
   },
   icon: {
-    height: 'auto',
-    width: '5em',
+    height: '7em',
+    width: 'auto',
   },
   currentlyIcon: {
     height: '10em',
