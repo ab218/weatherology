@@ -135,7 +135,6 @@ class App extends Component {
             icon={currentWeather}
           >
             {location}
-
           </LocationName>
         )
         }

@@ -11,6 +11,7 @@ export const LocationName = styled.h3`
   color: white;
   font-family: 'Palanquin', 'sans-serif';
   font-size: 2em;
+  margin: 0;
 `;
 
 export const SearchBarContainer = styled.div`
@@ -19,7 +20,7 @@ export const SearchBarContainer = styled.div`
   justify-content: center;
   height: 2em;
   padding: 0; 
-  margin-top: 1em;
+  margin: 1em;
 `;
 
 export const SearchItem = styled.div`
@@ -506,7 +507,7 @@ export const cardStyles = {
   },
   weekCard: {
     width: '8em',
-    height: '16em',
+    height: '18em',
   },
   dateTime: {
     padding: '0 1em',
