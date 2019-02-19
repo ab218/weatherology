@@ -110,12 +110,12 @@ class WeatherCard extends React.Component {
                 {`${this.toCelcius(day.temperatureLow)}º`}
               </h2>
             </div>
-            <div style={cardStyles.summary}>
-              <h4 style={cardStyles.summaryh4}>
-                {day.summary}
-              </h4>
-            </div>
           </CardActionArea>
+          <div style={cardStyles.summary}>
+            <h4 style={cardStyles.summaryh4}>
+              {day.summary}
+            </h4>
+          </div>
         </Card>
       </div>
     ),

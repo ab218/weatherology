@@ -545,6 +545,8 @@ export const cardStyles = {
     margin: '0 1em',
   },
   summaryh4: {
+    fontFamily: 'Arial, Helvetica, sans-serif',
+    fontSize: '0.75em',
     margin: '0',
   },
   currentSummaryh2: {
