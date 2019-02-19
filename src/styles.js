@@ -516,14 +516,16 @@ export const cardStyles = {
     width: '5em',
   },
   currentlyIcon: {
-    height: 'auto',
-    width: '8em',
+    height: '10em',
+    width: 'auto',
   },
   media: {
     height: 140,
   },
   currentlyFont: {
     fontSize: 28,
+    marginBottom: '0',
+    color: 'black',
   },
   temps: {
     display: 'flex',
@@ -543,6 +545,14 @@ export const cardStyles = {
   },
   summaryh4: {
     margin: '0',
+  },
+  currentSummaryh2: {
+    margin: '0',
+    padding: '0',
+  },
+  currentSummary: {
+    margin: '0',
+    padding: '0 0 2em 0',
   },
 };
 

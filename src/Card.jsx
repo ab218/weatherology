@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
 import moment from 'moment';
 import { cardStyles } from './styles';
 import cloudy from './weatherIcons/cloudy.svg';
@@ -71,7 +70,7 @@ class WeatherCard extends React.Component {
       <div>
         <Card style={cardStyles.card}>
           <CardActionArea>
-            <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('dddd, MMM Do, h:mm a')}</h2>
+            <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('ddd, MMM Do, h:mm a')}</h2>
             <h1 style={cardStyles.currentlyFont}>
               {`${this.toCelcius(weatherData.currently.temperature)}ºC`}
             </h1>
@@ -80,11 +79,11 @@ class WeatherCard extends React.Component {
               alt={weatherData.currently.icon}
               src={this.getIcon(weatherData.currently.icon)}
             />
-            <CardContent>
-              <h2>
+            <div style={cardStyles.currentSummary}>
+              <h2 style={cardStyles.currentSummaryh2}>
                 {weatherData.currently.summary}
               </h2>
-            </CardContent>
+            </div>
           </CardActionArea>
         </Card>
       </div>
