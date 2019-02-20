@@ -12,6 +12,7 @@ export const LocationName = styled.h3`
   font-family: 'Palanquin', 'sans-serif';
   font-size: 2em;
   margin: 0;
+  text-shadow: 1px 1px 1px black; 
 `;
 
 export const SearchBarContainer = styled.div`
