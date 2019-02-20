@@ -5,6 +5,7 @@ import SearchBar from './SearchBar';
 import nightImg from './stars.jpeg';
 import cloudsImg from './clouds.jpg';
 import darkCloudsImg from './darkClouds.jpg';
+import fogImg from './fog.jpg';
 import rainyImg from './rainyDay.jpeg';
 import snowyImg from './snowman.jpg';
 import {
@@ -39,13 +40,18 @@ class App extends Component {
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
       break;
-    case 'partly-cloudy-day':
-      document.body.style.backgroundImage = `url(${cloudsImg})`;
+    case 'cloudy':
+      document.body.style.backgroundImage = `url(${darkCloudsImg})`;
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
       break;
-    case 'cloudy':
-      document.body.style.backgroundImage = `url(${darkCloudsImg})`;
+    case 'fog':
+      document.body.style.backgroundImage = `url(${fogImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      break;
+    case 'partly-cloudy-day':
+      document.body.style.backgroundImage = `url(${cloudsImg})`;
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
       break;
