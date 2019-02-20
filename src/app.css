@@ -6,7 +6,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background: webkit-linear-gradient(to bottom, #1b62dd 0%, #fff 100%);
-  background-image: url('mtnbackground.jpeg');
+  background-image: url('mtnbackground.jpg');
   background: moz-linear-gradient(to bottom, #1b62dd 0%, #fff 100%);
 }
 

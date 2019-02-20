@@ -3,8 +3,8 @@ import axios from 'axios';
 import Card from './Card';
 import SearchBar from './SearchBar';
 import nightImg from './stars.jpeg';
-import cloudsImg from './clouds.jpeg';
-import darkCloudsImg from './darkClouds.jpeg';
+import cloudsImg from './clouds.jpg';
+import darkCloudsImg from './darkClouds.jpg';
 import rainyImg from './rainyDay.jpeg';
 import snowyImg from './snowman.jpg';
 import {
