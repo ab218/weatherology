@@ -32,7 +32,6 @@ class SearchBar extends React.Component {
       currentWeather, getPlace, loadPosition,
     } = this.props;
     const { value, items } = this.state;
-    console.log(items);
     return (
       <SearchBarContainer
         currentWeather={currentWeather}

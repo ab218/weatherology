@@ -3,16 +3,16 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import moment from 'moment';
 import { cardStyles } from './styles';
-import cloudy from './weatherIcons/cloudy.svg';
-import cloudyDay from './weatherIcons/cloudy-day-1.svg';
-import cloudyNight from './weatherIcons/cloudy-night-1.svg';
-import day from './weatherIcons/day.svg';
+import cloudy from './weatherIcons/new/cloudy.svg';
+import cloudyDay from './weatherIcons/new/partly-cloudy-day.svg';
+import cloudyNight from './weatherIcons/new/partly-cloudy-night.svg';
+import day from './weatherIcons/new/clear-day.svg';
 import fog from './weatherIcons/fog.svg';
-import night from './weatherIcons/night.svg';
-import rainy from './weatherIcons/rainy-5.svg';
-import sleet from './weatherIcons/rainy-7.svg';
-import snowy from './weatherIcons/snowy-5.svg';
-import wind from './weatherIcons/wind.svg';
+import night from './weatherIcons/new/clear-night.svg';
+import rainy from './weatherIcons/new/rain.svg';
+import sleet from './weatherIcons/new/snow.svg';
+import snowy from './weatherIcons/new/snowy.svg';
+import wind from './weatherIcons/new/sunwithlines.svg';
 
 class WeatherCard extends React.Component {
   getIcon = (iconData) => {

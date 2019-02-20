@@ -45,3 +45,9 @@ html {
   color: white;
   background-color: #4095bf;
 }
+
+.no-cpu {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+}

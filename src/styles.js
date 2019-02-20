@@ -80,6 +80,9 @@ const Cloud = styled.div`
   background: #fff;
   z-index: -1;
   position: relative; 
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
 
   &:before, &:after {
     content: '';
@@ -189,6 +192,9 @@ const Raindrop = styled.div`
   user-select:none;
   cursor:default;
   animation:${rainFall} 1s linear infinite;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
 
   &:nth-of-type(0) {
     left:1%;
@@ -259,6 +265,9 @@ const Ray = styled.div`
   position: absolute;
   opacity:0.8;
   z-index: -1;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
 
   &:nth-of-type(1) {
     transform: rotate(45deg);
@@ -333,6 +342,9 @@ const Snowflake = styled.div`
   user-select:none;
   cursor:default;
   animation: ${snowflakesFall} 3s linear infinite, ${snowflakesShake} 2s ease-in-out infinite;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
 
   &:nth-of-type(0) {
     left:1%;
