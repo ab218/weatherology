@@ -3,7 +3,10 @@ import axios from 'axios';
 import Card from './Card';
 import SearchBar from './SearchBar';
 import nightImg from './stars.jpeg';
-// import cloudsImg from './clouds.jpeg';
+import cloudsImg from './clouds.jpeg';
+import darkCloudsImg from './darkClouds.jpeg';
+import rainyImg from './rainyDay.jpeg';
+import snowyImg from './snowman.jpg';
 import {
   AppContainer,
   LocationName,
@@ -33,13 +36,28 @@ class App extends Component {
     case 'clear-night':
     case 'partly-cloudy-night':
       document.body.style.backgroundImage = `url(${nightImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      break;
+    case 'partly-cloudy-day':
+      document.body.style.backgroundImage = `url(${cloudsImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'cloudy':
-      document.body.style.background = 'linear-gradient(to bottom, #1ad1ff 0%, #e6faff 100%) fixed';
+      document.body.style.backgroundImage = `url(${darkCloudsImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'rain':
+      document.body.style.backgroundImage = `url(${rainyImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      break;
     case 'snow':
-      document.body.style.background = 'linear-gradient(to bottom, #808080 0%, #f2f2f2 100%) fixed';
+      document.body.style.backgroundImage = `url(${snowyImg})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     default:
       document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed';

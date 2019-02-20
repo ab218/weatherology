@@ -4,7 +4,7 @@ body {
   font-family: 'Palanquin', sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 'center';
+  background-position: center;
   background: webkit-linear-gradient(to bottom, #1b62dd 0%, #fff 100%);
   background-image: url('mtnbackground.jpeg');
   background: moz-linear-gradient(to bottom, #1b62dd 0%, #fff 100%);

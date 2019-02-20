@@ -67,26 +67,24 @@ class WeatherCard extends React.Component {
 
   renderToday = weatherData => (
     <div style={cardStyles.container}>
-      <div>
-        <Card style={cardStyles.card}>
-          <CardActionArea>
-            <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('ddd, MMM Do, h:mm a')}</h2>
-            <h1 style={cardStyles.currentlyFont}>
-              {`${this.toCelcius(weatherData.currently.temperature)}ºC`}
-            </h1>
-            <img
-              style={cardStyles.currentlyIcon}
-              alt={weatherData.currently.icon}
-              src={this.getIcon(weatherData.currently.icon)}
-            />
-            <div style={cardStyles.currentSummary}>
-              <h2 style={cardStyles.currentSummaryh2}>
-                {weatherData.currently.summary}
-              </h2>
-            </div>
-          </CardActionArea>
-        </Card>
-      </div>
+      <Card style={cardStyles.card}>
+        <CardActionArea>
+          <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('ddd, MMM Do, h:mm a')}</h2>
+          <h1 style={cardStyles.currentlyFont}>
+            {`${this.toCelcius(weatherData.currently.temperature)}ºC`}
+          </h1>
+          <img
+            style={cardStyles.currentlyIcon}
+            alt={weatherData.currently.icon}
+            src={this.getIcon(weatherData.currently.icon)}
+          />
+          <div style={cardStyles.currentSummary}>
+            <h2 style={cardStyles.currentSummaryh2}>
+              {weatherData.currently.summary}
+            </h2>
+          </div>
+        </CardActionArea>
+      </Card>
     </div>
   )
 
