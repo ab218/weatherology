@@ -12,7 +12,7 @@ import night from './weatherIcons/new/clear-night.svg';
 import rainy from './weatherIcons/new/rain.svg';
 import sleet from './weatherIcons/new/snow.svg';
 import snowy from './weatherIcons/new/snowy.svg';
-import wind from './weatherIcons/new/sunwithlines.svg';
+import wind from './weatherIcons/wind.svg';
 
 class WeatherCard extends React.Component {
   getIcon = (iconData) => {
