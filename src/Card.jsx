@@ -92,32 +92,30 @@ class WeatherCard extends React.Component {
 
   renderWeek = weatherData => weatherData.daily.data.map(
     day => (
-      <div key={day.sunsetTime} style={cardStyles.weekContainer}>
-        <Card style={cardStyles.weekCard}>
-          <CardActionArea>
-            <h3>{moment.unix(day.time).format('dddd')}</h3>
-            <h2>{moment.unix(day.time).format('MMM Do')}</h2>
-            <img
-              style={cardStyles.icon}
-              alt={weatherData.currently.icon}
-              src={this.getIcon(day.icon)}
-            />
-            <div style={cardStyles.temps}>
-              <h2 style={cardStyles.highTemp}>
-                {`${this.toCelcius(day.temperatureHigh)}º`}
-              </h2>
-              <h2 style={cardStyles.lowTemp}>
-                {`${this.toCelcius(day.temperatureLow)}º`}
-              </h2>
-            </div>
-          </CardActionArea>
-          <div style={cardStyles.summary}>
-            <h4 style={cardStyles.summaryh4}>
-              {day.summary}
-            </h4>
+      <Card key={day.sunsetTime} style={cardStyles.weekCard}>
+        <CardActionArea>
+          <h3>{moment.unix(day.time).format('dddd')}</h3>
+          <h2>{moment.unix(day.time).format('MMM Do')}</h2>
+          <img
+            style={cardStyles.icon}
+            alt={weatherData.currently.icon}
+            src={this.getIcon(day.icon)}
+          />
+          <div style={cardStyles.temps}>
+            <h2 style={cardStyles.highTemp}>
+              {`${this.toCelcius(day.temperatureHigh)}º`}
+            </h2>
+            <h2 style={cardStyles.lowTemp}>
+              {`${this.toCelcius(day.temperatureLow)}º`}
+            </h2>
           </div>
-        </Card>
-      </div>
+        </CardActionArea>
+        <div style={cardStyles.summary}>
+          <h4 style={cardStyles.summaryh4}>
+            {day.summary}
+          </h4>
+        </div>
+      </Card>
     ),
   )
 
@@ -128,9 +126,11 @@ class WeatherCard extends React.Component {
         {weatherData.currently
           && this.renderToday(weatherData)
         }
-        {weatherData.daily
+        <div style={cardStyles.weekContainer}>
+          {weatherData.daily
           && this.renderWeek(weatherData)
-        }
+          }
+        </div>
       </div>
     );
   }

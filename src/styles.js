@@ -498,14 +498,16 @@ export const cardStyles = {
     padding: '1.5em 0',
   },
   weekContainer: {
-    display: 'inline-block',
-    padding: '1em',
-    width: '8em',
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: '100%',
+    justifyContent: 'center',
   },
   card: {
     maxWidth: 345,
   },
   weekCard: {
+    margin: '1em',
     width: '8em',
     height: '19em',
   },
