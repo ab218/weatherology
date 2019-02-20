@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Autocomplete from 'react-autocomplete';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 import { SearchBarContainer, searchBarStyles } from './styles';
 import './app.css';
 
@@ -20,12 +21,6 @@ class SearchBar extends React.Component {
       console.log(e);
     }
   }
-
-  // handleChange = name => (event) => {
-  //   this.setState({
-  //     [name]: event.target.value,
-  //   });
-  // };
 
   render() {
     const {
@@ -69,18 +64,22 @@ class SearchBar extends React.Component {
             </div>
           )}
         />
-        <Button
-          style={searchBarStyles.submitButton}
-          onClick={() => getPlace(value)}
-        >
-          <i className="fas fa-search" />
-        </Button>
-        <Button
-          style={searchBarStyles.currentLocationButton}
-          onClick={() => loadPosition()}
-        >
-          <i className="fas fa-location-arrow" />
-        </Button>
+        <Tooltip title="Search">
+          <Button
+            style={searchBarStyles.submitButton}
+            onClick={() => getPlace(value)}
+          >
+            <i className="fas fa-search" />
+          </Button>
+        </Tooltip>
+        <Tooltip title="Use Current Location">
+          <Button
+            style={searchBarStyles.currentLocationButton}
+            onClick={() => loadPosition()}
+          >
+            <i className="fas fa-location-arrow" />
+          </Button>
+        </Tooltip>
       </SearchBarContainer>
     );
   }
