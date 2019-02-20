@@ -31,18 +31,25 @@ export const SearchItem = styled.div`
 const moveClouds = keyframes`
   0% {
     margin-left: 1000px;
+    transform: translateZ(0);
+
   }
   100% {
     margin-left: -300px;
+    transform: translateZ(0);
+
   }
 `;
 
 const rainFall = keyframes`
   0% {
       top:-10%
+      transform: translateZ(0);
+
   }
   100% {
       top:100%
+      transform: translateZ(0);
   }
 `;
 
@@ -60,18 +67,22 @@ const rayAnim = keyframes`
 const snowflakesFall = keyframes`
   0% {
       top:-10%
+      transform: translateZ(0);
+
   }
   100% {
       top:100%
+      transform: translateZ(0);
   }
 `;
 
 const snowflakesShake = keyframes`
   0%,100% {
-      transform:translateX(0)
+      transform: translateX(0)
+
   } 
   50% {
-      transform:translateX(80px)
+      transform: translateX(80px)
   }
 `;
 
@@ -80,9 +91,6 @@ const Cloud = styled.div`
   background: #fff;
   z-index: -1;
   position: relative; 
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
 
   &:before, &:after {
     content: '';
@@ -110,7 +118,6 @@ const Cloud = styled.div`
 
   &:nth-of-type(1) {
     left: 200px;
-    transform: scale(0.6);
     opacity: 0.3;
     animation: ${moveClouds} 25s linear infinite;
   }
@@ -118,7 +125,6 @@ const Cloud = styled.div`
   &:nth-of-type(2) {
     left: -250px; 
     top: 200px;
-    transform: scale(0.8);
     opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
@@ -126,7 +132,6 @@ const Cloud = styled.div`
   &:nth-of-type(3) {
     left: 470px; 
     top: 250px;
-    transform: scale(0.75);
     opacity: 0.4;
     animation: ${moveClouds} 18s linear infinite;
   }
@@ -134,7 +139,6 @@ const Cloud = styled.div`
   &:nth-of-type(4) {
     left: -150px; 
     top: 150px;
-    transform: scale(0.8);
     opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
@@ -142,7 +146,6 @@ const Cloud = styled.div`
   &:nth-of-type(5) {
     left: 150px; 
     top: 10vh;
-    transform: scale(1.5);
     opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
   }
@@ -150,7 +153,6 @@ const Cloud = styled.div`
   &:nth-of-type(6) {
     left: -50px;
     top: 15vh;
-    transform: scale(2.5);
     opacity: 0.4;
     animation: ${moveClouds} 25s linear infinite;
   }
@@ -158,7 +160,6 @@ const Cloud = styled.div`
   &:nth-of-type(7) {
     left: -100px; 
     top: 5vh;
-    transform: scale(3);
     opacity: 0.3;
     animation: ${moveClouds} 20s linear infinite;
   }
@@ -166,7 +167,6 @@ const Cloud = styled.div`
   &:nth-of-type(8) {
     left: -100px; 
     top: 8vh;
-    transform: scale(2);
     opacity: 0.2;
     animation: ${moveClouds} 10s linear infinite;
   }
@@ -174,7 +174,6 @@ const Cloud = styled.div`
   &:nth-of-type(9) {
     left: 100px; 
     top: 12vh;
-    transform: scale(1);
     opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
   }
@@ -192,9 +191,6 @@ const Raindrop = styled.div`
   user-select:none;
   cursor:default;
   animation:${rainFall} 1s linear infinite;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
 
   &:nth-of-type(0) {
     left:1%;
@@ -265,9 +261,6 @@ const Ray = styled.div`
   position: absolute;
   opacity:0.8;
   z-index: -1;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
 
   &:nth-of-type(1) {
     transform: rotate(45deg);
@@ -342,9 +335,6 @@ const Snowflake = styled.div`
   user-select:none;
   cursor:default;
   animation: ${snowflakesFall} 3s linear infinite, ${snowflakesShake} 2s ease-in-out infinite;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
 
   &:nth-of-type(0) {
     left:1%;
