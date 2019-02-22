@@ -9,6 +9,7 @@ import darkCloudsImg from './darkClouds.jpg';
 import fogImg from './fog.jpg';
 import rainyImg from './rainyDay.jpeg';
 import snowyImg from './snowman.jpg';
+import windyImg from './wind.jpg';
 import {
   AppContainer,
   LocationName,
@@ -57,6 +58,9 @@ class App extends Component {
       break;
     case 'snow':
       document.body.style.backgroundImage = `url(${snowyImg})`;
+      break;
+    case 'wind':
+      document.body.style.backgroundImage = `url(${windyImg})`;
       break;
     default:
       document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed';
