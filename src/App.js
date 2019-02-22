@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from './Card';
 import SearchBar from './SearchBar';
 import nightImg from './stars.jpg';
+import partlyCloudyNightImg from './partlycloudynight.jpg';
 import cloudsImg from './clouds.jpg';
 import darkCloudsImg from './darkClouds.jpg';
 import fogImg from './fog.jpg';
@@ -36,40 +37,32 @@ class App extends Component {
     const { currentWeather } = this.state;
     switch (currentWeather) {
     case 'clear-night':
-    case 'partly-cloudy-night':
       document.body.style.backgroundImage = `url(${nightImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
+      break;
+    case 'partly-cloudy-night':
+      document.body.style.backgroundImage = `url(${partlyCloudyNightImg})`;
       break;
     case 'cloudy':
       document.body.style.backgroundImage = `url(${darkCloudsImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'fog':
       document.body.style.backgroundImage = `url(${fogImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'partly-cloudy-day':
       document.body.style.backgroundImage = `url(${cloudsImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'rain':
     case 'sleet':
       document.body.style.backgroundImage = `url(${rainyImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'snow':
       document.body.style.backgroundImage = `url(${snowyImg})`;
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundRepeat = 'no-repeat';
       break;
     default:
       document.body.style.background = 'linear-gradient(to bottom, #1b62dd 0%, #fff 100%) fixed';
     }
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
   }
 
   getCurrentPosition = (options =
