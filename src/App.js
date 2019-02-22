@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Card from './Card';
 import SearchBar from './SearchBar';
-import nightImg from './stars.jpeg';
+import nightImg from './stars.jpg';
 import cloudsImg from './clouds.jpg';
 import darkCloudsImg from './darkClouds.jpg';
 import fogImg from './fog.jpg';
@@ -14,6 +14,7 @@ import {
   renderCloudy,
   renderPartlyCloudy,
   renderRainy,
+  renderSleet,
   renderSnowy,
   renderSunny,
   Title,
@@ -56,6 +57,7 @@ class App extends Component {
       document.body.style.backgroundRepeat = 'no-repeat';
       break;
     case 'rain':
+    case 'sleet':
       document.body.style.backgroundImage = `url(${rainyImg})`;
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
@@ -143,6 +145,7 @@ class App extends Component {
             </div>
           )
           : null}
+        {currentWeather === 'sleet' && renderSleet()}
         {currentWeather === 'clear-day' && renderSunny()}
         {currentWeather === 'partly-cloudy-day' && renderPartlyCloudy()}
         {currentWeather === 'partly-cloudy-night' && renderPartlyCloudy()}

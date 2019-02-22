@@ -422,6 +422,26 @@ export const Title = styled.h1`
   font-family: 'Palanquin Dark', cursive;
 `;
 
+export const renderSleet = () => (
+  <div>
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Raindrop />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+  </div>
+);
+
 export const renderSunny = () => (
   <Sun>
     <RayBox>
