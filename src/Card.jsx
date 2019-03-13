@@ -14,8 +14,8 @@ import sleet from './weatherIcons/new/snow.svg';
 import snowy from './weatherIcons/new/snowy.svg';
 import wind from './weatherIcons/wind.svg';
 
-class WeatherCard extends React.Component {
-  getIcon = (iconData) => {
+function WeatherCard({ weatherData }) {
+  const getIcon = (iconData) => {
     let weatherIcon = null;
     switch (iconData) {
     case 'clear-day':
@@ -61,22 +61,22 @@ class WeatherCard extends React.Component {
       return weatherIcon;
     }
     return weatherIcon;
-  }
+  };
 
-  toCelcius = f => Math.round(((f - 32) * 5 / 9))
+  const toCelcius = f => Math.round(((f - 32) * 5 / 9));
 
-  renderToday = weatherData => (
+  const renderToday = weatherData => (
     <div style={cardStyles.container}>
       <Card style={cardStyles.card}>
         <CardActionArea>
           <h2 style={cardStyles.dateTime}>{moment.unix(weatherData.currently.time).format('ddd, MMM Do, h:mm a')}</h2>
           <h1 style={cardStyles.currentlyFont}>
-            {`${this.toCelcius(weatherData.currently.temperature)}ºC`}
+            {`${toCelcius(weatherData.currently.temperature)}ºC`}
           </h1>
           <img
             style={cardStyles.currentlyIcon}
             alt={weatherData.currently.icon}
-            src={this.getIcon(weatherData.currently.icon)}
+            src={getIcon(weatherData.currently.icon)}
           />
           <div style={cardStyles.currentSummary}>
             <h2 style={cardStyles.currentSummaryh2}>
@@ -86,9 +86,9 @@ class WeatherCard extends React.Component {
         </CardActionArea>
       </Card>
     </div>
-  )
+  );
 
-  renderWeek = weatherData => weatherData.daily.data.map(
+  const renderWeek = weatherData => weatherData.daily.data.map(
     day => (
       <Card key={day.sunsetTime} style={cardStyles.weekCard}>
         <CardActionArea>
@@ -97,14 +97,14 @@ class WeatherCard extends React.Component {
           <img
             style={cardStyles.icon}
             alt={weatherData.currently.icon}
-            src={this.getIcon(day.icon)}
+            src={getIcon(day.icon)}
           />
           <div style={cardStyles.temps}>
             <h2 style={cardStyles.highTemp}>
-              {`${this.toCelcius(day.temperatureHigh)}º`}
+              {`${toCelcius(day.temperatureHigh)}º`}
             </h2>
             <h2 style={cardStyles.lowTemp}>
-              {`${this.toCelcius(day.temperatureLow)}º`}
+              {`${toCelcius(day.temperatureLow)}º`}
             </h2>
           </div>
         </CardActionArea>
@@ -115,23 +115,19 @@ class WeatherCard extends React.Component {
         </div>
       </Card>
     ),
-  )
-
-  render() {
-    const { weatherData } = this.props;
-    return (
-      <div>
-        {weatherData.currently
-          && this.renderToday(weatherData)
+  );
+  return (
+    <div>
+      {weatherData.currently
+          && renderToday(weatherData)
+      }
+      <div style={cardStyles.weekContainer}>
+        {weatherData.daily
+          && renderWeek(weatherData)
         }
-        <div style={cardStyles.weekContainer}>
-          {weatherData.daily
-          && this.renderWeek(weatherData)
-          }
-        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default WeatherCard;

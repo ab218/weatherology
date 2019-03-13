@@ -12,15 +12,15 @@ export const LocationName = styled.h3`
   font-family: 'Palanquin', 'sans-serif';
   font-size: 2em;
   margin: 0;
-  text-shadow: 1px 1px 1px black; 
+  text-shadow: 1px 1px 1px black;
 `;
 
 export const SearchBarContainer = styled.div`
-  display: flex; 
+  display: flex;
   text-align: center;
   justify-content: center;
   height: 2em;
-  padding: 0; 
+  padding: 0;
   margin: 1em;
 `;
 
@@ -55,12 +55,12 @@ const rainFall = keyframes`
 `;
 
 const rayAnim = keyframes`
-  0% { 
-      -webkit-transform: rotate(0deg); 
+  0% {
+      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
-    }    
-  100% { 
-    -webkit-transform: rotate(360deg); 
+    }
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 `;
@@ -81,7 +81,7 @@ const snowflakesShake = keyframes`
   0%,100% {
       transform: translateX(0)
 
-  } 
+  }
   50% {
       transform: translateX(80px)
   }
@@ -91,25 +91,25 @@ const Cloud = styled.div`
   width: 200px;
   background: #fff;
   z-index: -1;
-  position: relative; 
+  position: relative;
 
   &:before, &:after {
     content: '';
     background: #fff;
-    width: 100px; 
+    width: 100px;
     height: 80px;
-    position: absolute; 
-    top: -15px; 
+    position: absolute;
+    top: -15px;
     left: 10px;
     border-radius: 50%;
     transform: rotate(30deg);
   }
 
   &:after {
-    width: 120px; 
+    width: 120px;
     height: 120px;
-    top: -55px; 
-    left: auto; 
+    top: -55px;
+    left: auto;
     right: 15px;
   }
 
@@ -124,28 +124,28 @@ const Cloud = styled.div`
   }
 
   &:nth-of-type(2) {
-    left: -250px; 
+    left: -250px;
     top: 200px;
     opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
 
   &:nth-of-type(3) {
-    left: 470px; 
+    left: 470px;
     top: 250px;
     opacity: 0.4;
     animation: ${moveClouds} 18s linear infinite;
   }
 
   &:nth-of-type(4) {
-    left: -150px; 
+    left: -150px;
     top: 150px;
     opacity: 0.5;
     animation: ${moveClouds} 20s linear infinite;
   }
 
   &:nth-of-type(5) {
-    left: 150px; 
+    left: 150px;
     top: 10vh;
     opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
@@ -159,21 +159,21 @@ const Cloud = styled.div`
   }
 
   &:nth-of-type(7) {
-    left: -100px; 
+    left: -100px;
     top: 5vh;
     opacity: 0.3;
     animation: ${moveClouds} 20s linear infinite;
   }
 
   &:nth-of-type(8) {
-    left: -100px; 
+    left: -100px;
     top: 8vh;
     opacity: 0.2;
     animation: ${moveClouds} 10s linear infinite;
   }
 
   &:nth-of-type(9) {
-    left: 100px; 
+    left: 100px;
     top: 12vh;
     opacity: 0.5;
     animation: ${moveClouds} 30s linear infinite;
@@ -305,7 +305,7 @@ const Ray = styled.div`
     left: 300px;
   }
 
-  &:nth-of-type(8) {    
+  &:nth-of-type(8) {
       transform: rotate(0deg);
       top: 300px;
       left: 0px;
@@ -319,7 +319,7 @@ const RayBox = styled.div`
   left:0;
   right:0;
   bottom:0;
-  width:70px;  
+  width:70px;
   animation: rayAnim 45s linear infinite;
   z-index: -1;
 `;
@@ -404,13 +404,13 @@ const Sun = styled.div`
   left:0;
   right:0;
   bottom:0;
-  margin: 15vh auto;  
+  margin: 15vh auto;
   height: 300px;
   width: 300px;
   border-radius:50%;
   background:rgb(234, 238, 18);
   opacity:0.9;
-  box-shadow: 0px 0px 40px 15px rgb(234, 238, 18);  
+  box-shadow: 0px 0px 40px 15px rgb(234, 238, 18);
   z-index: -1;
   animation: ${rayAnim} 20s linear infinite;
 `;
