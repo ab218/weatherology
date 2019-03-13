@@ -7,7 +7,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { SearchBarContainer, searchBarStyles } from './styles';
 import './app.css';
 
-const SearchBar = ({ currentWeather, getPlace, loadPosition }) => {
+const SearchBar = ({ getPlace, loadPosition }) => {
   const [value, setValue] = useState('');
   const [items, setItems] = useState([]);
 
@@ -23,9 +23,7 @@ const SearchBar = ({ currentWeather, getPlace, loadPosition }) => {
   let requestTimer = null;
 
   return (
-    <SearchBarContainer
-      currentWeather={currentWeather}
-    >
+    <SearchBarContainer>
       <Autocomplete
         autoHighlight
         inputProps={{
