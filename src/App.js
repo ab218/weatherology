@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Card';
-import SearchBar from './SearchBar';
-import nightImg from './stars.jpg';
-import partlyCloudyNightImg from './partlycloudynight.jpg';
-import cloudsImg from './clouds.jpg';
-import darkCloudsImg from './darkClouds.jpg';
-import fogImg from './fog.jpg';
-import mtnImg from './mtnbackground.jpg';
-import rainyImg from './rainyDay.jpeg';
-import snowyImg from './snowman.jpg';
-import windyImg from './wind.jpg';
+import Card from './Components/Card';
+import SearchBar from './Components/SearchBar';
+import nightImg from './Assets/backgrounds/stars.jpg';
+import partlyCloudyNightImg from './Assets/backgrounds/partlycloudynight.jpg';
+import cloudsImg from './Assets/backgrounds/clouds.jpg';
+import darkCloudsImg from './Assets/backgrounds/darkClouds.jpg';
+import fogImg from './Assets/backgrounds/fog.jpg';
+import mtnImg from './Assets/backgrounds/mtnbackground.jpg';
+import rainyImg from './Assets/backgrounds/rainyDay.jpeg';
+import snowyImg from './Assets/backgrounds/snowman.jpg';
+import windyImg from './Assets/backgrounds/wind.jpg';
 import {
   AppContainer,
   LocationName,

@@ -4,8 +4,8 @@ import axios from 'axios';
 import Autocomplete from 'react-autocomplete';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
-import { SearchBarContainer, searchBarStyles } from './styles';
-import './app.css';
+import { SearchBarContainer, searchBarStyles } from '../styles';
+import '../app.css';
 
 const SearchBar = ({ getPlace, loadPosition }) => {
   const [value, setValue] = useState('');

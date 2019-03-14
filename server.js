@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const darkSkyRoutes = require('./src/darkSkyRoutes.js');
-const googleRoutes = require('./src/googleRoutes.js');
+const darkSkyRoutes = require('./src/Routes/darkSkyRoutes.js');
+const googleRoutes = require('./src/Routes/googleRoutes.js');
 
 app.use('/api/weather', darkSkyRoutes);
 app.use('/api/google', googleRoutes);

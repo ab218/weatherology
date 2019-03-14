@@ -2,17 +2,17 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import moment from 'moment';
-import { cardStyles } from './styles';
-import cloudy from './weatherIcons/new/cloudy.svg';
-import cloudyDay from './weatherIcons/new/partly-cloudy-day.svg';
-import cloudyNight from './weatherIcons/new/partly-cloudy-night.svg';
-import day from './weatherIcons/new/clear-day.svg';
-import fog from './weatherIcons/fog.svg';
-import night from './weatherIcons/new/clear-night.svg';
-import rainy from './weatherIcons/new/rain.svg';
-import sleet from './weatherIcons/new/snow.svg';
-import snowy from './weatherIcons/new/snowy.svg';
-import wind from './weatherIcons/wind.svg';
+import { cardStyles } from '../styles';
+import cloudy from '../Assets/weatherIcons/cloudy.svg';
+import cloudyDay from '../Assets/weatherIcons/partly-cloudy-day.svg';
+import cloudyNight from '../Assets/weatherIcons/partly-cloudy-night.svg';
+import day from '../Assets/weatherIcons/clear-day.svg';
+import fog from '../Assets/weatherIcons/fog.svg';
+import night from '../Assets/weatherIcons/clear-night.svg';
+import rainy from '../Assets/weatherIcons/rain.svg';
+import sleet from '../Assets/weatherIcons/snow.svg';
+import snowy from '../Assets/weatherIcons/snowy.svg';
+import wind from '../Assets/weatherIcons/wind.svg';
 
 function WeatherCard({ weatherData }) {
   const getIcon = (iconData) => {
