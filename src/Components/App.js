@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Components/Card';
-import SearchBar from './Components/SearchBar';
-import nightImg from './Assets/backgrounds/stars.jpg';
-import partlyCloudyNightImg from './Assets/backgrounds/partlycloudynight.jpg';
-import cloudsImg from './Assets/backgrounds/clouds.jpg';
-import darkCloudsImg from './Assets/backgrounds/darkClouds.jpg';
-import fogImg from './Assets/backgrounds/fog.jpg';
-import mtnImg from './Assets/backgrounds/mtnbackground.jpg';
-import rainyImg from './Assets/backgrounds/rainyDay.jpeg';
-import snowyImg from './Assets/backgrounds/snowman.jpg';
-import windyImg from './Assets/backgrounds/wind.jpg';
+import Card from './Card';
+import SearchBar from './SearchBar';
+import nightImg from '../Assets/backgrounds/stars.jpg';
+import partlyCloudyNightImg from '../Assets/backgrounds/partlycloudynight.jpg';
+import cloudsImg from '../Assets/backgrounds/clouds.jpg';
+import darkCloudsImg from '../Assets/backgrounds/darkClouds.jpg';
+import fogImg from '../Assets/backgrounds/fog.jpg';
+import mtnImg from '../Assets/backgrounds/mtnbackground.jpg';
+import rainyImg from '../Assets/backgrounds/rainyDay.jpeg';
+import snowyImg from '../Assets/backgrounds/snowman.jpg';
+import windyImg from '../Assets/backgrounds/wind.jpg';
 import {
   AppContainer,
   LocationName,
@@ -21,8 +21,8 @@ import {
   renderSnowy,
   renderSunny,
   Title,
-} from './styles';
-import './app.css';
+} from '../styles';
+import '../app.css';
 
 // TODO: sleet, wind, fog
 
