@@ -1,6 +1,8 @@
-## Weatherology
+## Summary
 
-Weatherology uses dark sky api to display the current weather and forecast. 
+Weatherology uses dark sky api to display the current weather and forecast.
+
+![alt tag](https://github.com/ab218/weatherology/blob/master/src/Assets/weather.gif)
 
 ## Installation
 
