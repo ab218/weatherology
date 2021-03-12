@@ -54,7 +54,7 @@
     "react": "^16.8.4",
     "react-app-polyfill": "^0.2.0",
     "react-autocomplete": "^1.8.1",
-    "react-dev-utils": "^7.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.8.4",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
